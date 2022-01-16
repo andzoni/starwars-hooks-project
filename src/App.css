@@ -1,6 +1,11 @@
+html {
+  background-color: black;
+}
+
 .nav {
   width: 100%;
 }
+
 
 .table {
   text-align: center;

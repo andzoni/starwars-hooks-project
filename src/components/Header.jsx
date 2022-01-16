@@ -17,12 +17,12 @@ function Header() {
   const [handleFilter] = useFilters();
   const INITIAL_INPUT_VALUE = {
     column: 'population',
-    comparison: 'maior que',
+    comparison: 'bigger then',
     value: 0,
   };
   const initialColumn = ['population',
-    'orbital_period', 'diameter', 'rotation_period', 'surface_water'];
-  const comparisonFilters = ['maior que', 'igual a', 'menor que'];
+    'orbital period', 'diameter', 'rotation period', 'surface water'];
+  const comparisonFilters = ['bigger than', 'equal to', 'smaller than'];
 
   const [columnFilters, setColumnFilters] = useState(initialColumn);
 
@@ -63,20 +63,20 @@ function Header() {
               type="text"
               name="planet-input"
               testID="name-filter"
-              labelText="Nome: "
+              labelText="Name:"
               onChange={ ({ target: { value } }) => setQueryValue(value) }
             />
             <Select
               name="column"
               testID="column-filter"
-              labelText="Filtro: "
+              labelText="Filter:"
               options={ columnFilters }
               onChange={ handleFilterChange }
             />
             <Select
               name="comparison"
               testID="comparison-filter"
-              labelText="Comparação: "
+              labelText="Comparison:"
               options={ comparisonFilters }
               onChange={ handleFilterChange }
             />
@@ -84,7 +84,7 @@ function Header() {
               type="number"
               name="value"
               testID="value-filter"
-              labelText="Valor: "
+              labelText="Value:"
               value={ inputValues.value }
               onChange={ handleFilterChange }
             />
@@ -96,7 +96,7 @@ function Header() {
               data-testid="button-filter"
               onClick={ handleClick }
             >
-              Adicionar Filtro
+              Add Filter
             </Button>
           </Form.Group>
         </Form>
