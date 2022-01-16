@@ -7,19 +7,17 @@ import logo from '../starwars.svg';
 function Home() {
   return (
     <main>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" className='nav'>
         <Container className="justify-content-center">
-          <img
+          <img className="swImg"
             src={ logo }
             width="100"
-            className="d-inline-block align-top"
             alt="starwars logo"
           />
           <Navbar.Brand href="/">StarWars Hooks Project</Navbar.Brand>
-          <img
+          <img className="swImg"
             src={ logo }
             width="100"
-            className="d-inline-block align-top"
             alt="starwars logo"
           />
         </Container>

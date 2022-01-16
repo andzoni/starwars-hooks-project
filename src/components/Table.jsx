@@ -7,6 +7,7 @@ function Table() {
   const { planets, planetsKeys } = useContext(MyContext);
 
   return (
+    <div className='table'>
       <BSTable striped bordered hover responsive variant="dark">
         <thead>
           <tr>
@@ -21,6 +22,7 @@ function Table() {
           />
         </tbody>
       </BSTable>
+    </div>
   );
 }
 

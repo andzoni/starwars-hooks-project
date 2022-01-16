@@ -1,4 +1,11 @@
-.body {
+.nav {
+  width: 100%;
+}
+
+.table {
+  text-align: center;
+  padding: 10px;
+  background-color: black;
 }
 
 .background {
@@ -22,11 +29,21 @@
   margin-top: 3px;
 }
 
-img {
+.swImg {
   border-radius: 20px;
   margin-right: 1rem;
 }
 
 select{
   text-align-last: center;
+}
+
+input {
+  text-align-last: center;
+}
+
+@media (max-width: 700px) {
+  .swImg {
+    display: none;
+  }
 }

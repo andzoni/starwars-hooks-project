@@ -39,7 +39,7 @@ function Filters() {
   return (
     <div className='divH3'>
       <br/>
-      <h3>Filtros aplicados:</h3>
+      <h2>Filtros aplicados:</h2> 
       { renderFilters() }
     </div>
   );
