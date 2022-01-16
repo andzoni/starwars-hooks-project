@@ -4,6 +4,7 @@ import MyContext from '../context/MyContext';
 import Input from './Input';
 import Select from './Select';
 import Filters from './Filters';
+import { Button, Form } from 'react-bootstrap';
 
 function Header() {
   const {
@@ -54,47 +55,54 @@ function Header() {
   };
 
   return (
-    <header className="header-box">
-      <form onSubmit={ handleSubmit }>
-        <Input
-          type="text"
-          name="planet-input"
-          testID="name-filter"
-          labelText="Nome: "
-          onChange={ ({ target: { value } }) => setQueryValue(value) }
-        />
-        <Select
-          name="column"
-          testID="column-filter"
-          labelText="Filtro: "
-          options={ columnFilters }
-          onChange={ handleFilterChange }
-        />
-        <Select
-          name="comparison"
-          testID="comparison-filter"
-          labelText="Comparação: "
-          options={ comparisonFilters }
-          onChange={ handleFilterChange }
-        />
-        <Input
-          type="number"
-          name="value"
-          testID="value-filter"
-          labelText="Valor: "
-          value={ inputValues.value }
-          onChange={ handleFilterChange }
-        />
-        <button
-          type="submit"
-          data-testid="button-filter"
-          onClick={ handleClick }
-        >
-          Adicionar Filtro
-        </button>
-      </form>
+    <>
+      <header className="background">
+        <Form onSubmit={ handleSubmit } className='form'>
+          <Form.Group className="mb-3">
+            <Input
+              type="text"
+              name="planet-input"
+              testID="name-filter"
+              labelText="Nome: "
+              onChange={ ({ target: { value } }) => setQueryValue(value) }
+            />
+            <Select
+              name="column"
+              testID="column-filter"
+              labelText="Filtro: "
+              options={ columnFilters }
+              onChange={ handleFilterChange }
+            />
+            <Select
+              name="comparison"
+              testID="comparison-filter"
+              labelText="Comparação: "
+              options={ comparisonFilters }
+              onChange={ handleFilterChange }
+            />
+            <Input
+              type="number"
+              name="value"
+              testID="value-filter"
+              labelText="Valor: "
+              value={ inputValues.value }
+              onChange={ handleFilterChange }
+            />
+            <br/>
+            <Button
+              variant="light"
+              size="lg"
+              type="submit"
+              data-testid="button-filter"
+              onClick={ handleClick }
+            >
+              Adicionar Filtro
+            </Button>
+          </Form.Group>
+        </Form>
+      </header>
       <Filters />
-    </header>
+    </>
   );
 }
 

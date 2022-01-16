@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Form } from 'react-bootstrap';
 
 function Select({ name, labelText, options, onChange, testID }) {
   return (
     <div>
-      <label htmlFor={ name }>
-        { labelText }
-        <select
-          name={ name }
-          id={ name }
-          onChange={ onChange }
-          data-testid={ testID }
+      <Form.Label className="label" htmlFor={ name }>{ labelText }</Form.Label>
+      <Form.Select
+        name={ name }
+        id={ name }
+        onChange={ onChange }
+        data-testid={ testID }
         >
           {
             options && options.map((option, index) => (
@@ -23,8 +23,7 @@ function Select({ name, labelText, options, onChange, testID }) {
               </option>
             ))
           }
-        </select>
-      </label>
+      </Form.Select>
     </div>
   );
 }

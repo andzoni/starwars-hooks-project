@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Form } from 'react-bootstrap';
 
 function Input({ type, name, testID, onChange, labelText, value }) {
   return (
     <div>
-      <label htmlFor={ name }>
-        { labelText }
-        <input
-          type={ type }
-          name={ name }
-          data-testid={ testID }
-          onChange={ onChange }
-          id={ name }
-          value={ value }
-        />
-      </label>
+      <Form.Label className="label" htmlFor={ name }>{ labelText }</Form.Label>
+      <Form.Control  
+        type={ type }
+        name={ name }
+        data-testid={ testID }
+        onChange={ onChange }
+        id={ name }
+        value={ value }
+      />
     </div>
   );
 }
